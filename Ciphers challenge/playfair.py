@@ -4,7 +4,9 @@ def menu():
     ---------------WELCOME-----------------------
     Please choose an option:
     1. Create grids
-    2. """)
+    2. Encrypt (Type E)
+    3. Decrypt (Type D)
+    4. Quit (Type Q)""")
 
 
 def secret1(word):
