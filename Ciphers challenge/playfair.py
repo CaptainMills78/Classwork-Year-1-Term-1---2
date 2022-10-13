@@ -1,4 +1,7 @@
 print("hello world")
+def menu():
+    print("""
+    ---------------WELCOME-----------------------""")
 
 
 def secret1(word):
@@ -30,7 +33,7 @@ def prin_grid(grid):
 
 grid1st = secret1(input("Please enter the first secret word:"))
 grid2nd = secret2(input("Please enter the 2nd word"))
-
+print("")
 prin_grid(grid1st)
 print("")
 prin_grid(grid2nd)
