@@ -1,7 +1,10 @@
 print("hello world")
 def menu():
     print("""
-    ---------------WELCOME-----------------------""")
+    ---------------WELCOME-----------------------
+    Please choose an option:
+    1. Create grids
+    2. """)
 
 
 def secret1(word):
