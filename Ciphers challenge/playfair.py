@@ -8,7 +8,7 @@ def menu():
     2. Encrypt (Type E)
     3. Decrypt (Type D)
     4. Quit (Type Q)""")
-    
+
 
 
 def secret1(word):
