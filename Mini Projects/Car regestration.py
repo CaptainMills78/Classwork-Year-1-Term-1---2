@@ -13,4 +13,5 @@ def check_det(n, p, r, y):
     if r == "" or int(y) < 2001:
         return True
     else:
-        if r[0]
+        if r[0] in "ABCDEFGHJKLMNOPRSTUVWXY" and r[1] in "ABCDEFGHJKLMNOPRSTUVWXY":
+            if r[2] in "0123456789" and r[3] in "0123456789":
