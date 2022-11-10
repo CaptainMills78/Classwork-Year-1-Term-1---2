@@ -13,9 +13,23 @@ def menu():
         if grids == "":
             print("You have not set up any grids, we will do that now...")
             grids = create_grid()
-        else:
-            
 
+        to_encrypt = input("Please enter a word to encrypt:")
+        if len(to_encrypt) % 2 == 1:
+            to_encrypt += "x"
+        encrypted = encrypt(to_encrypt, grids)
+        print("The result is: " + str(encrypted))
+
+
+def encrypt(word, grid_set):
+    print("Word")
+    grid_rows = rows(grid_set)
+    result = ""
+    return result
+
+
+def rows(grids_sets):
+    seperated = ""
 
 
 def secret1(word):
