@@ -29,7 +29,8 @@ def encrypt(word, grid_set):
 
 
 def rows(grids_sets):
-    seperated = ""
+    for x in range(0, 5):
+        seperated = ""
 
 
 def secret1(word):
