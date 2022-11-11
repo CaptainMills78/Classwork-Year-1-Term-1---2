@@ -54,7 +54,11 @@ def search():
 
 
 def save():
-    pass
+    file = open("airports.txt","w")
+    for x in airports:
+        x = x.strip()
+        file.write(x+", "+airports[x]+",n")
+    file.close()
 
 
 end = False
