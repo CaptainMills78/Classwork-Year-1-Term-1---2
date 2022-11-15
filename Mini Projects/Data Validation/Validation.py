@@ -16,7 +16,7 @@ def IsValid():
         day_valid = rangeCheck(d[0:1], 30, 1)
     else:
         day_valid = rangeCheck(d[0:1], 31, 1)
-
+    print(l_valid, f_valid, year_valid, leap_year, month_valid, day_valid)
     if l_valid and f_valid and year_valid and month_valid and day_valid:
         return True
     else:
@@ -53,13 +53,14 @@ def lengthCheck(ld):
 
 
 def rangeCheck(data, maximum, minimum):
-    if minimum <= data <= maximum:
+    if minimum <= int(data) <= maximum:
         return True
     else:
         return False
 
 
 def leapCheck(year):
+    year = int(year)
     if (year % 100 != 0 and year % 400) or (year % 4 == 0 and year % 100 != 0):
         return True
     else:
@@ -68,3 +69,4 @@ def leapCheck(year):
 
 # Main Code
 valid = IsValid()
+print(valid)
