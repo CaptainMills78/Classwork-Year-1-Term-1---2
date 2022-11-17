@@ -1,21 +1,21 @@
 def IsValid():
-    d = enter()
-    l_valid = lengthCheck(d)
-    f_valid = formatCheck(d)
-    year_valid = rangeCheck(d[6:], 2022, 1600)
+    date = enter()
+    l_valid = lengthCheck(date)
+    f_valid = formatCheck(date)
+    year_valid = rangeCheck(date[6:], 2022, 1600)
     if year_valid:
-        leap_year = leapCheck(d[6:])
+        leap_year = leapCheck(date[6:])
     else:
         leap_year = False
-    month_valid = rangeCheck(d[3:4], 12, 1)
-    if d[3:4] == "02" and leap_year:
-        day_valid = rangeCheck(d[0:1], 29, 1)
-    elif d[3:4] == "02" and not leap_year:
-        day_valid = rangeCheck(d[0:1], 28, 1)
-    elif d[3:4] == "04" or d[3:4] == "06" or d[3:4] == "09" or d[3:4] == "11":
-        day_valid = rangeCheck(d[0:1], 30, 1)
+    month_valid = rangeCheck(date[3:4], 12, 1)
+    if date[3:4] == "02" and leap_year:
+        day_valid = rangeCheck(date[0:1], 29, 1)
+    elif date[3:4] == "02" and not leap_year:
+        day_valid = rangeCheck(date[0:1], 28, 1)
+    elif date[3:4] == "04" or date[3:4] == "06" or date[3:4] == "09" or date[3:4] == "11":
+        day_valid = rangeCheck(date[0:1], 30, 1)
     else:
-        day_valid = rangeCheck(d[0:1], 31, 1)
+        day_valid = rangeCheck(date[0:1], 31, 1)
     print(l_valid, f_valid, year_valid, leap_year, month_valid, day_valid)
     if l_valid and f_valid and year_valid and month_valid and day_valid:
         return True
@@ -53,7 +53,7 @@ def lengthCheck(ld):
 
 
 def rangeCheck(data, maximum, minimum):
-    if minimum <= int(data) <= maximum:
+    if int(minimum) <= int(data) <= maximum:
         return True
     else:
         return False
