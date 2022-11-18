@@ -7,14 +7,15 @@ square = [[0, 1, 2, 3, 4, 5],
           [6, "Z", "?", " ", "@", "."]]
 
 
-def display(square):
-    for x in range(len(square)):
+def display(square1):
+    for x in range(len(square1)):
         row = ""
-        for y in range(len(square[x])):
-            row += str(square[x][y])
-            row += " | "
-        print(row)
-        print("-----------------------")
+        for y in range(len(square1[x])):
+            print(square1[x][y],end=" | ")
+            #row += str(square1[x][y])
+            #row += " | "
+        #print(row)
+        print("\n-----------------------")
     pass
 
 
@@ -33,19 +34,6 @@ def deCipher(cryptogram):
         letter = square[row][column]
         word += letter
     return word
-
-
-def encrypt(plain):
-    plain = plain.upper()
-    for x in str(plain):
-        for y in "ABCDEFGHIJKLMNOPQRSTUVWXYZ? @.":
-            if x != y:
-                print("The plaintext includes unsupported characters...")
-                print("Quitting...")
-                import sys
-                sys.exit()
-            else:
-                pass
 
 
 def main():
