@@ -36,7 +36,7 @@ def main():
     count = 0
     valid = False
     while count < 3:
-        number = str(input("Please enter your card number to check it, or 'x' to quit:"))
+        number = str(input("Please enter your card number (11 digits) to check it, or 'x' to quit:"))
         if number == "x":
             print("Quiting...")
             return
