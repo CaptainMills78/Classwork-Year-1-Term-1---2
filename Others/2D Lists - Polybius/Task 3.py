@@ -8,7 +8,6 @@ square = [[0, 1, 2, 3, 4, 5],
 
 
 def display(square):
-
     for x in range(len(square)):
         row = ""
         for y in range(len(square[x])):
@@ -36,10 +35,24 @@ def deCipher(cryptogram):
     return word
 
 
+def encrypt(plain):
+    plain = plain.upper()
+    for x in str(plain):
+        for y in "ABCDEFGHIJKLMNOPQRSTUVWXYZ? @.":
+            if x != y:
+                print("The plaintext includes unsupported characters...")
+                print("Quitting...")
+                import sys
+                sys.exit()
+            else:
+                pass
+
+
 def main():
     code = input(" Enter Cryptogram (the ciphered message) ...  ")
 
     print("The Secret word is ... " + deCipher(code))
+
 
 display(square)
 main()
