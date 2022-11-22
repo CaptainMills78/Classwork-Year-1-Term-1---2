@@ -28,7 +28,7 @@ def addTaxi(rank, reg, head1):
     return rank
 
 
-def leavingTaxi(rank1):
+def leavingTaxi(rank1, head):
     pointer1 = head
     while pointer1 >= 0:
         if rank1[pointer1][1] != 66:
