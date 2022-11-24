@@ -2,17 +2,15 @@ head = 0
 
 
 def in_details():
-    year = ""
+    year = 2006
     reg = input("Please enter your car registration (if there is none, enter blank):")
-    if reg != "":
-        year = int(input("Please enter the year that your car was registered:"))
+    if len(reg) != 8:
+        print("This registration is not the right length.")
+        valid = False
     if year == "":
         valid = True
     else:
         valid = check_det(reg, year)
-    if len(reg) > 8:
-        print("This regestration is too long.")
-        valid = False
     if valid:
         return reg
     else:
@@ -89,6 +87,16 @@ def leavingTaxi(rank1, head2):
     return rank1
 
 
+def output_rank(to_print):
+    print("Current Taxi Rank:")
+    for x in range(len(to_print), 0, -1):
+        if to_print[x-1][1] != 66:
+            print((to_print[x-1][0]), end=", ")
+        else:
+            print("Empty", end=", ")
+    print("\n")
+
+
 def main():
     taxi_rank = setRank()
     quitting = "n"
@@ -112,7 +120,7 @@ def main():
         elif int(choice) == 2:
             taxi_rank = leavingTaxi(taxi_rank, head)
         elif int(choice) == 3:
-            print(taxi_rank)
+            output_rank(taxi_rank)
         elif int(choice) == 4:
             quitting = "y"
         else:
