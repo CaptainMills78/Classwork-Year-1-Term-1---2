@@ -13,7 +13,7 @@ def in_details():
     if len(reg) > 8:
         print("This regestration is too long.")
         valid = False
-    if valid == True:
+    if valid:
         return reg
     else:
         print("Not a valid reg number, taking back to menu...")
@@ -82,7 +82,6 @@ def leavingTaxi(rank1, head2):
     pointer1 = head2
     while pointer1 >= 0:
         if rank1[pointer1][1] != 66:
-            temp = rank1[pointer1][1]
             rank1[pointer1][1] = 66
             pointer1 = -1
         else:
