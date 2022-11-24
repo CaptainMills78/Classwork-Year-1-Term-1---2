@@ -1,7 +1,7 @@
 def in_details():
-    year = ""
     name = input("Please enter your full name:")
     phone = str(input("Please enter your phone number:"))
+    year = ""
     reg = input("Please enter your car registration (if there is none, enter blank):")
     if reg != "":
         year = int(input("Please enter the year that your car was registered:"))
