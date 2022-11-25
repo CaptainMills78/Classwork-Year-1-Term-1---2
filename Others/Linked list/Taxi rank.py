@@ -102,7 +102,7 @@ def determine_next(rank3):
     for x in rank3:
         if x[1] != 66 and x[1] > next_point:
             next_point = x[1]
-    return next_point+1
+    return next_point + 1
 
 
 def leavingAny(rank4, leaving):
@@ -139,7 +139,7 @@ def leavingHead(rank1, head2):
 
 def output_rank(to_sort):
     print(to_sort)
-    to_print = sorted(to_sort, key= lambda x: int(x[1]), reverse= True)
+    to_print = sorted(to_sort, key=lambda x: int(x[1]), reverse=True)
     print("Current Taxi Rank:")
     for x in to_print:
         if x[1] == 66:
