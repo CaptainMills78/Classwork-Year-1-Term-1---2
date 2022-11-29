@@ -1,6 +1,6 @@
 # Initial Linked List:
 
-names = [["Abid", 3],
+group = [["Abid", 3],
          ["Jason", 2],
          ["Mazen", -1],
          ["James", 1]]
@@ -10,10 +10,10 @@ Head = 0  # Starts the linked list at row 0 (Abid)
 
 # Adding a value:
 
-names.append(["Adam", 2])
-names[1][1] = 4
+group.append(["Adam", 2])
+group[1][1] = 4
 
 
 # Deleting a value:
-names[2][1] = -1
-names[4][1] = 3
+group[2][1] = -1
+group[4][1] = 3
