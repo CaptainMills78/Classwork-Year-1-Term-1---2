@@ -1,10 +1,10 @@
-group = ["", "", "", "", "", "", "", "", ""]
-sps = 0
-maxLengths = len(group)
+names = ["", "", "", "", "", "", "", "", ""]
+sp = 0
+maxLength = len(names)
 
 
 def isEmpty():
-    global group, sps, maxLengths
+    global names, sp, maxLength
     if sp == 0:
         return True
     else:
@@ -12,7 +12,7 @@ def isEmpty():
 
 
 def isFull():
-    global group, sps, maxLengths
+    global names, sp, maxLength
     if sp == maxLength:
         return True
     else:
@@ -20,7 +20,7 @@ def isFull():
 
 
 def pushItem(item):
-    global group, sps, maxLengths
+    global names, sp, maxLength
     if not isFull():
         names[sp] = item
         sp += 1
@@ -29,7 +29,7 @@ def pushItem(item):
 
 
 def popItem():
-    global group, sps, maxLengths
+    global names, sp, maxLength
     if not isEmpty():
         sp -= 1
     else:
@@ -37,7 +37,7 @@ def popItem():
 
 
 def main():
-    global group, sps
+    global names, sp
 
 
 main()

@@ -87,7 +87,9 @@ def main():
                 valid1 = isStackValid(Stack_chosen)
             Stack_chosen = int(Stack_chosen) - 1
             if Option_chosen == 1:
-                print(group[Stack_chosen])
+                for x in range(0, sps[Stack_chosen]):
+                    print(group[Stack_chosen][x], end=", ")
+                print("\n")
             elif Option_chosen == 2:
                 to_push = input("Enter an item to push to your chosen stack:")
                 pushItem(to_push, Stack_chosen)
