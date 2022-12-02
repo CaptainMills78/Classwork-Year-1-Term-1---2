@@ -81,8 +81,10 @@ def game():
     won = False
     while not won:
         r_turn()
+        if r_counters >= 4:
+            won = check_win()
         b_turn()
-        if r_counters >= 4 or b_counters >= 4:
+        if b_counters >= 4:
             won = check_win()
 
 
