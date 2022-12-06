@@ -27,7 +27,13 @@ def show_board():
     global board
     for y in range(6, 0, -1):
         for x in range(len(board)):
-            print(board[x][y - 1], end=" ")
+            to_print = board[x][y-1]
+            if to_print == "r":
+                print("\033[1;31m"+"r"+"\033[1;m", end=" ")
+            elif to_print == "b":
+                print("\033[1;34m"+"b"+"\033[1;m", end=" ")
+            else:
+                print(to_print, end=" ")
         print()
     return
 
