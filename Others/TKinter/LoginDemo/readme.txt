@@ -1,0 +1,3 @@
+Hide password as typed - https://www.bing.com/ck/a?!&&p=c2147109b992c04cJmltdHM9MTY3NTcyODAwMCZpZ3VpZD0wNzQ3NGVmZC03YjZkLTZmNzktMzc2OS01YzZkN2Y2ZDYxMDImaW5zaWQ9NTQyOQ&ptn=3&hsh=3&fclid=07474efd-7b6d-6f79-3769-5c6d7f6d6102&psq=tkinter+password+entry&u=a1aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjQxNjQ4Ni9ob3ctdG8tY3JlYXRlLWEtcGFzc3dvcmQtZW50cnktZmllbGQtdXNpbmctdGtpbnRlcg&ntb=1
+
+Check Sign in

@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+
 
 def createGUI():
     window = Tk()
@@ -23,10 +25,10 @@ def createGUI():
     exitButton = Button(window, text="Close", width=12, command=quit)
     exitButton.grid(row=0, column=4, padx=10, pady=10)
 
-    clearButton = Button(window, text="Clear", width=12,command=lambda: clear(weightEntry, heightEntry))
+    clearButton = Button(window, text="Clear", width=12, command=lambda: clear(weightEntry, heightEntry))
     clearButton.grid(row=4, column=0, padx=10, pady=10)
 
-    calcButton = Button(window, text = "Calculate", width = 12, command= lambda: calcBMI(window, weightEntry, heightEntry))
+    calcButton = Button(window, text="Calculate", width=12, command=lambda: calcBMI(window, weightEntry, heightEntry))
     calcButton.grid(row=4, column=1)
     weightEntry.focus()
     window.mainloop()
@@ -35,16 +37,17 @@ def createGUI():
 def calcBMI(f, w, h):
     h = float(h.get())
     w = float(w.get())
-    bmi = w/(h**2)
+    bmi = w / (h ** 2)
     bmi = round(bmi, 2)
-    result = "Your BMI is "+ str(bmi)
-    messagebox.showinfo(title= "BMI Value", message= result)
-    msgBox = messagebox.askquestion(title="continue...", message= "Do you want to continue?")
+    result = "Your BMI is " + str(bmi)
+    messagebox.showinfo(title="BMI Value", message=result)
+    msgBox = messagebox.askquestion(title="continue...", message="Do you want to continue?")
     if msgBox == "yes":
         f.destroy()
         createGUI()
     else:
         quit()
+
 
 def clear(e1, e2):
     e1.delete(0, 'end')
