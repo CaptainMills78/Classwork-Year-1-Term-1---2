@@ -83,10 +83,10 @@ def signin(w):
     passField.grid(row=2, column=1, sticky="SNEW", padx=10, pady=10)
 
     passLabel2 = Label(win3, text="Re-Type Password")
-    passLabel.grid(row=3, column=0, sticky="W", padx=10, pady=10)
+    passLabel2.grid(row=3, column=0, sticky="W", padx=10, pady=10)
 
     passField2 = Entry(win3, show="*", width=20)
-    passField.grid(row=3, column=1, sticky="SNEW", padx=10, pady=10)
+    passField2.grid(row=3, column=1, sticky="SNEW", padx=10, pady=10)
 
     backButton = Button(win3, text="Back", command=lambda: back(win3))  # Destroys current window and returns to main
     backButton.grid(row=4, column=0, sticky="SNEW", padx=10, pady=10)
@@ -123,7 +123,7 @@ def menu(w, u, p):
 
 def check(uName, pWord):
     names = ""
-    file = open(r"H:\Documents\GitHub\Mini-project-1-Pi-Calculator\Others\TKinter\LoginDemo\Users.txt", "r")
+    file = open(r"Users.txt", "r")
     for x in file:
         names += str(x)
     names = names.split(";")
@@ -149,8 +149,14 @@ def checkSignIn(u, p, p2):
 
 def showSignIn(w, u, p, p2):
     if checkSignIn(u.get(), p.get(), p2.get()):
-        w.destroy()
-
-    pass
+        messagebox.showinfo(title= "Sign in Successful", message="Sign in successful, try your login:")
+        back(w)
+    else:
+        msgBox = messagebox.askquestion("Return?", message="Sign in failed, retry?")
+        if msgBox == "yes":
+            signin(w)
+        else:
+            back(w)
+    return
 
 main()
