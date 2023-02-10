@@ -1,0 +1,3 @@
+import LoginDemo
+
+LoginDemo.main()

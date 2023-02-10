@@ -159,4 +159,6 @@ def showSignIn(w, u, p, p2):
             back(w)
     return
 
-main()
+
+if __name__ == "__main__":
+    main()
