@@ -7,9 +7,9 @@ from tkinter import *
 def plot():
     fig = Figure(figsize = (5,5), dpi=100)    # Creating Figure
     # setting the x - coordinates
-    x = [0, 2, 6, 9]
+    x = [0, 2, 6,10, 100]
     # setting the corresponding y - coordinates
-    y = [0, 3, 9, 13.5]
+    y = [0, 3, 9, 13.5, 45]
 
     # Creating the plot
     plot1 = fig.add_subplot(111)
