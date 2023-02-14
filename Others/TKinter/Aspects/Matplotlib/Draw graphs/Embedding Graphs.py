@@ -4,7 +4,7 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationTool
 from tkinter import *
 
 
-def plot():
+def plot(x, y):
     fig = Figure(figsize = (5,5), dpi=100)    # Creating Figure
     # setting the x - coordinates
     x = [0, 2, 6,10, 100]
