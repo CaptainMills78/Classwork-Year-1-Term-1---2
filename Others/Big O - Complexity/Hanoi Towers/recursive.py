@@ -17,7 +17,7 @@ def TowerOfHanoi(n, from_rod, to_rod, aux_rod):
     TowerOfHanoi(n - 1, aux_rod, to_rod, from_rod)
 
 
-for i in range(0, 18, 1):
+for i in range(0, 5, 1):
     n = i
     x.append(n)
     tracemalloc.start()
