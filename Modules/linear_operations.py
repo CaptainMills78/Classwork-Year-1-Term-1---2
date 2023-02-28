@@ -14,9 +14,19 @@ def linear(values, target):
     return found, position
 
 
-if __name__ == "__main__":
-    l = [1, 3, 7, 43, 12, 87, 4]
-    presence, pos = linear(l, int(input("Please enter a target")))
-    print("Item in List? - "+str(presence))
-    if presence:
-        print("Position at +")
+def findLargest(values):
+    largest = values[0]
+    pos = 0
+    for x in range(len(values)):
+        if values[x] > largest:
+            largest = values[x]
+            pos = x
+    return largest, pos
+
+
+def occurenceCount(values, target):
+    count = 0
+    for x in range(len(values)):
+        if values[x] == target:
+            count += 1
+    return count
