@@ -16,9 +16,9 @@ def binarySearch(l, target):
 
 
 if __name__ == "__main__":
-    List = [1, 3, 7, 43, 12, 87, 4]
-    List.sort()
-    f, pos = binarySearch(List, 7)
+    List = [1, 3, 4, 7, 12, 87]
+    tar = int(input("Please enter something to search for"))
+    f, pos = binarySearch(List, tar)
     if f:
         print("Found at "+str(pos))
     else:
