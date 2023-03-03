@@ -1,5 +1,6 @@
 
 def binarySearch(l, target):
+    mid = 0
     found = False
     first = 0
     last = len(l) - 1
