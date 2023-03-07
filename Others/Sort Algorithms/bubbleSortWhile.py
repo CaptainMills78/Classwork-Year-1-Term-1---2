@@ -25,11 +25,16 @@ def bubbleSort(l, ascending=True):
 
 if __name__ == "__main__":
     import random
+    import time
+    num = int(input("Please enter the length of the list"))
     List = []
-    for x in range(0,10):
+    for x in range(0,num):
         List.append(random.randint(0, 100))
     print(List)
+    start = time.time()
     l_sorted, swaps, passes = bubbleSort(List, False)
+    diff = time.time() - start
     print(l_sorted)
     print(swaps, "swaps")
     print(passes, "passes")
+    print(diff, "time taken")
