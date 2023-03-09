@@ -1,16 +1,30 @@
-def insertionSort(l, ascending=True):
-    count_swaps = 0
-    count_passes = 0
-    for x in range(1, len(l)):
-        count_passes += 1
-        current = l[x]
-        position = x
-        while position > 0 and l[position - 1] > current:
-            count_swaps += 1
-            l[position] = l[position - 1]
-            position = position - 1
-        l[position] = current
-    return l, count_swaps, count_passes
+def insertionSort1(l):
+    i = 1
+    swaps = 0
+    while i < len(l):
+        j = i
+        while j >0 and l[j-1] > l[j]:
+            swaps += 1
+            temp = l[j-1]
+            l[j-1] = l[j]
+            l[j] = temp
+            j -= 1
+        i += 1
+    return l, i, swaps
+
+
+def insertionSort2(l):
+    for i in range(1, len(l)):
+        swap = False
+        item = l[i]
+        j = i-1
+        while j >= 0 and l[j] > item:
+            swap = True
+            l[j+1] = l[j]
+            j -= 1
+        if swap:
+            l[j+1] = item
+    return l
 
 
 if __name__ == "__main__":
@@ -19,10 +33,15 @@ if __name__ == "__main__":
     List = []
     for x in range(10):
         List.append(random.randint(0, 100))
+    print(List)
     start = time.time()
-    l_sorted, swaps, passes = insertionSort(List, False)
+    l1_sorted, passes, swaps = insertionSort1(List)
     diff = time.time() - start
-    print(l_sorted)
+    print(l1_sorted)
     print(swaps, "swaps")
     print(passes, "passes")
     print(diff, "time taken")
+    start = time.time()
+    l2_sorted = insertionSort2(List)
+    diff = time.time() - start
+    print(l2_sorted)
