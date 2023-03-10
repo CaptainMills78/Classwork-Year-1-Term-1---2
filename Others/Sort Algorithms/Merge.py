@@ -1,4 +1,4 @@
-def mergeSort(l1, l2):
+def sort(l1, l2):
     p1 = 0
     p2 = 0
     result = []
@@ -18,6 +18,13 @@ def mergeSort(l1, l2):
     return result
 
 
+def split(l):
+    low = 0
+    high = len(l)-1
+    if low < high:
+        mid = (low+high)//2
+
+
 if __name__ == "__main__":
     import random
     list1 = []
@@ -29,4 +36,4 @@ if __name__ == "__main__":
     list2.sort()
     print(list1)
     print(list2)
-    print(mergeSort(list1, list2))
+    print(sort(list1, list2))
