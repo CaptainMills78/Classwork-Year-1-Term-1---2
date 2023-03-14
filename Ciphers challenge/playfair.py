@@ -16,13 +16,22 @@ def menu():
                 print("You have not set up any grids, we will do that now...")
                 grids = create_grid()
 
-            to_encrypt = input("Please enter a word to encrypt:")
+            to_encrypt = (input("Please enter a word to encrypt:")).lower()
             if len(to_encrypt) % 2 == 1:
                 to_encrypt += "x"
             encrypted = encrypt(to_encrypt, grids)
             print("The result is: " + str(encrypted))
         elif mode == "Q":
             stop = True
+        elif mode == "D":
+            if grids == "":
+                print("You have not set up any grids, we will do that now...")
+                grids = create_grid()
+
+            to_decrypt = (input("Please enter a word to decrypt:")).lower()
+            decrypted = decrypt(to_decrypt, grids)
+            print("The result is: "+ str(decrypted))
+
 
 
 def encrypt(word, grid_set):
@@ -38,6 +47,15 @@ def encrypt(word, grid_set):
     return result
 
 
+def decrypt(word, grid_set):
+    word = encrypt(word, grid_set)
+    if word == "Error: Result Not Calculated.":
+        return word
+    elif word[-1] == "x":
+        word = word[:-1]
+        return word
+
+
 def rows(grids_sets):
     seperated = ""
     for y in range(0, len(grids_sets)):
@@ -51,21 +69,25 @@ def rows(grids_sets):
 def find_pair(letter1, letter2, grids):
     encoded1pos = "unset"
     encoded2pos = "unset"
+    x = 0
     seperate_grids = grids.split("      ")
-    for x in range(0, len(seperate_grids[0])):
+    while encoded1pos == "unset" and x < len(seperate_grids[0]):
         if seperate_grids[0][x] == letter1:
             encoded1pos = x
-    for x in range(0, len(seperate_grids[1])):
+        x += 1
+    x = 0
+    while encoded2pos == "unset" and x < len(seperate_grids[1]):
         if seperate_grids[1][x] == letter2:
             encoded2pos = x
+        x += 1
     if encoded2pos == "unset" or encoded2pos == "unset":
         print("Error with encryption")
         return False
     else:
-        if encoded2pos - encoded1pos > 5 or encoded2pos - encoded1pos < -5:
+        if abs(encoded2pos - encoded1pos) > 5:
             row_diff = (encoded2pos - encoded1pos) // 5
-            encoded3pos = encoded1pos + (5 * row_diff)
-            encoded4pos = encoded2pos - (5 * row_diff)
+            encoded3pos = encoded1pos + 5+(5 * row_diff)
+            encoded4pos = encoded2pos - ((5 * row_diff) + 5)
         else:
             if seperate_grids[0][encoded1pos + 1] == " ":
                 encoded3pos = encoded1pos + 6
@@ -106,8 +128,8 @@ def prin_grid(grid):
 
 
 def create_grid():
-    grid1st = secret1(input("Please enter the first secret word:"))
-    grid2nd = secret2(input("Please enter the 2nd word"))
+    grid1st = secret1(input("Please enter the first secret word:").lower())
+    grid2nd = secret2(input("Please enter the 2nd word").lower())
     print("")
     prin_grid(grid1st)
     print("")
