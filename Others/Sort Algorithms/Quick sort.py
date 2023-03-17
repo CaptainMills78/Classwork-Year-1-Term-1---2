@@ -1,5 +1,5 @@
 def quickSort(l, start, end):
-    if end-start == 1:
+    if end-start == 0:
         return
     fixed = start
     movable = end
