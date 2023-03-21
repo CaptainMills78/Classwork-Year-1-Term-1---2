@@ -29,6 +29,8 @@ def createHash(l, length, chaining=True):
                 pass
             else:
                 pos += 1
+                if pos >= length:
+                    pos = 0
         hashTable[pos] = x
     return hashTable
 
