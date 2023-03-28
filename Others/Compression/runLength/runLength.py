@@ -1,6 +1,6 @@
 def encode(input_string):
     count = 1
-    prev = ""
+    prev = input_string[0]
     lst = []
     for char in input_string:
         if char != prev:
@@ -25,6 +25,15 @@ def decode(lst):
         q += char*count
     return q
 
+
+def cleanUp(text_list):
+    string_out = ""
+    for x in text_list:
+        if x[1] == 1:
+            string_out += x[0]+" "
+        else:
+            string_out += "255 "+str(x[1])+" "+x[0]+" "
+    return string_out
 
 if __name__ == "__main__":
     image = []
