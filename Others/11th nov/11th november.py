@@ -1,4 +1,10 @@
 airports = {}
+file = open("airports.txt","r")
+for line in file:
+    line = line.strip()
+    line = line.split(", ")
+    airports[line[0]] = line[1]
+file.close()
 
 
 def menu():
@@ -7,8 +13,10 @@ def menu():
     2. Search for Airport
     3. View the dictionary
     4. End (This will store the dictionary)""")
-    user = int(input("Please enter what you would like to do?"))
-    print(user)
+    user = input("Please enter what you would like to do?")
+    if user.isalpha():
+        user = 5
+    user = int(user)
     match user:
         case 1:
             addNew()
@@ -57,7 +65,7 @@ def save():
     file = open("airports.txt","w")
     for x in airports:
         x = x.strip()
-        file.write(x+", "+airports[x]+",n")
+        file.write(x+", "+airports[x]+"\n")
     file.close()
 
 
