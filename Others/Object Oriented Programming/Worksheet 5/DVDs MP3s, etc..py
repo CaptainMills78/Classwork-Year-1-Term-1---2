@@ -33,7 +33,6 @@ class mp3(item):
 
 class dvd(item):
 
-
     def __init__(self, givencert, givendur, givenactors, givenname, givendes, givenpri):
         self.certificate = givencert
         self.duration = givendur
@@ -87,4 +86,4 @@ if __name__ == "__main__":
         # x.viewFullDescription()
     myItem = item(givenName="Banana", givenDes="Yellow object", givenPri=5.67)
     myItem.viewFullDescription()
-    bookArray[0].viewFullDescription()
+    mp3Array[0].viewFullDescription()
