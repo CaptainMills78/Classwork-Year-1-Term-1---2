@@ -1,6 +1,4 @@
 class item(object):
-    def __new__(cls, *args, **kwargs):
-        return super().__new__(item)
 
     def __init__(self, givenName, givenDes, givenPri):
         self.name = givenName
@@ -8,7 +6,7 @@ class item(object):
         self.price = givenPri
 
     def viewFullDescription(self):
-        print("Item Description: " + self.name + ", " + str(self.description) + ", £" + str(self.price))
+        print("Item Description: " + str(self.name) + ", " + str(self.description) + ", £" + str(self.price))
 
     def addToShoppingBasket(self):
         print("Added to Shopping Basket")
@@ -30,9 +28,11 @@ class mp3(item):
     def download(self):
         print("Downloading...")
 
+    def viewFullDescription(self):
+        print(f"MP3: {self.name}, About: {self.description}, {self.duration} minutes long, £{self.price}. By Artist: {self.artist}.")
+
 
 class dvd(item):
-
 
     def __init__(self, givencert, givendur, givenactors, givenname, givendes, givenpri):
         self.certificate = givencert
@@ -42,6 +42,9 @@ class dvd(item):
 
     def viewTrailer(self):
         print("Showing trailer")
+
+    def viewFullDescription(self):
+        print(f"DVD: {self.name}. About: {self.description}, {self.duration} minutes long. Cost: £{self.price} Cast: {self.actors}")
 
 
 class book(item):
@@ -54,6 +57,9 @@ class book(item):
 
     def previewContent(self):
         print("Here is the preview content:")
+
+    def viewFullDescription(self):
+        print(f"Book: {self.name} by {self.author}. About: {self.description}, {self.NumberOfPages} Pages Long. £{self.price}")
 
 
 if __name__ == "__main__":
@@ -71,20 +77,20 @@ if __name__ == "__main__":
         mp3(givenname="Shine", givendes="Let it Shine!", givenpri=0.99, givenartist="Take That", givenduration="4 mins")
         ]
     bookArray = [
-        book(givenpri=12.50, givendes="Compass is found that can detect dusty areas", givenname="Northen Lights",
-             givengenre="Fantasy", givenauthor="Phillip Pullman", givennumberpages=121),
+        book(givennumberpages=121, givenpri=12.50, givendes="Compass is found that can detect dusty areas", givenname="Northen Lights",
+             givengenre="Fantasy", givenauthor="Phillip Pullman"),
         book(givenpri=9.50, givendes="Schoolboy tries to survive life", givenname="A Diary of a Wimpy Kid",
              givengenre="Slice of Life", givenauthor="Greg", givennumberpages=98),
         book(givenpri=15.50, givendes="Find out stuff about the universe!", givenname="Element in the room",
              givengenre="Informative", givenauthor="Steve Mould", givennumberpages=276)
         ]
 
-    # for x in dvdArray:
-        # x.viewFullDescription()
-    # for x in mp3Array:
-        # x.viewFullDescription()
-    # for x in bookArray:
-        # x.viewFullDescription()
+    for x in dvdArray:
+        x.viewFullDescription()
+    for x in mp3Array:
+        x.viewFullDescription()
+    for x in bookArray:
+        x.viewFullDescription()
     myItem = item(givenName="Banana", givenDes="Yellow object", givenPri=5.67)
-    myItem.viewFullDescription()
-    bookArray[0].viewFullDescription()
+    myItem.viewFullDescription()    # Works as intended
+    bookArray[0].viewFullDescription() # Currently with error, attribute not found - name, description
