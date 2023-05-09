@@ -64,14 +64,17 @@ class player():
 
     def hand_total(self):
         total = 0
+        aceCount = 0
         for i in self.__hand:
             if i.get_rank() == "Ace":
-                if total + 11 > 21:
-                    total += 1
-                else:
-                    total += 11
+                aceCount += 1
             else:
                 total += i.get_value()
+        for x in range(aceCount):
+            if total + 11 > 21:
+                total += 1
+            else:
+                total += 11
         return total
 
     def recieve(self, givencard):
@@ -143,16 +146,16 @@ def gameRound(Player, Dealer):
     playerTotal = Player.view_hand()
     dealerTotal = Dealer.view_card()
     if playerTotal == 21 and dealerTotal == 21:
-        print("DRAW")
+        print("IMMEDIATE DRAW")
         Player.add_score("DRAW")
         Dealer.add_score("DRAW")
         return
     elif playerTotal == 21:
-        print("WIN!")
+        print("IMMEDIATE WIN!")
         Player.add_score("WIN")
         return
     elif dealerTotal == 21:
-        print("LOSS!")
+        print("IMMEDIATE LOSS!")
         Dealer.add_score("WIN")
         return
     else:
@@ -228,8 +231,14 @@ if __name__ == "__main__":
     # deck1.shuffle()
     # for i in deck1.Cards:     # Test to ensure all cards are present
         # print(i.get_details())
-
-    playGame()
+    stop = False
+    while not stop:
+        playGame()
+        user = str(input("Would you like to play again? y/n"))
+        if user == "n":
+            print("Playing again...")
+        else:
+            print("Thank you for playing!")
 
 
 
